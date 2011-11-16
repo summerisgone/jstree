@@ -19,3 +19,11 @@ ul {
 .closed ul {
     display: none;
 }
+
+.filtered {
+    display: none;
+}
+
+.highlight {
+    background-color: yellow;
+}
