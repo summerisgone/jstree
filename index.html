@@ -6,28 +6,108 @@
   <title>summerisgone/jstree @ GitHub</title>
 
   <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #38b154;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #ffffff;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #c74eab; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #c74eab; }
-    h3 { text-align: center; color: #c74eab; }
-    a { color: #c74eab; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
+      body {
+          margin-top: 1.0em;
+          background-color: #38b154;
+          font-family: Helvetica, Arial, FreeSans, san-serif;
+          color: #ffffff;
+      }
+
+      #container {
+          margin: 0 auto;
+          width: 700px;
+      }
+
+      h1 {
+          font-size: 3.8em;
+          color: #26560d;
+          margin-bottom: 3px;
+      }
+
+      h1 .small {
+          font-size: 0.4em;
+      }
+
+      h1 a {
+          text-decoration: none
+      }
+
+      h2 {
+          font-size: 1.5em;
+          color: #26560d;
+      }
+
+      h3 {
+          text-align: center;
+          color: #26560d;
+      }
+
+      a {
+          color: #26560d;
+      }
+
+      .description {
+          font-size: 1.2em;
+          margin-bottom: 30px;
+          margin-top: 30px;
+          font-style: italic;
+      }
+
+      .download {
+          float: right;
+      }
+
+      pre {
+          background: #000;
+          color: #fff;
+          padding: 15px;
+      }
+
+      hr {
+          border: 0;
+          width: 80%;
+          border-bottom: 1px solid #aaa
+      }
+
+      .footer {
+          text-align: center;
+          padding-top: 30px;
+          font-style: italic;
+      }
+
+      ul, li {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+      }
+
+      ul {
+          margin-left: 30px;
+      }
+
+      .opened:before {
+          content: '[-]';
+      }
+
+      .closed:before {
+          content: '[+]';
+      }
+
+      .closed ul {
+          display: none;
+      }
+
+      .filtered {
+          display: none;
+      }
+
+      .highlight {
+          background-color: yellow;
+      }
   </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://raw.github.com/summerisgone/jstree/master/jquerymx-3.2.custom.min.js"></script>
+    <script type="text/javascript" src="https://raw.github.com/summerisgone/jstree/master/plugin.js"></script>
 </head>
 
 <body>
@@ -60,7 +140,7 @@
       <h2>Install</h2>
       <p>Supposed to build tree from nested ul>li tags with labels.
 
-Usage:  $('<ul selecfot>').tree();</p>
+<h4>Usage:</h4>  <pre>$('&lt;ul selecfot&gt;').tree();</pre>
     
 
     
@@ -70,20 +150,74 @@ Usage:  $('<ul selecfot>').tree();</p>
 
     
       <h2>Authors</h2>
-      <p>Ivan Gromov (summer.is.gone@gmail.com)<br/>      </p>
+      <p>Ivan Gromov (summer.is.gone@gmail.com)
+<br/>      </p>
     
 
     
       <h2>Contact</h2>
-      <p>Ivan Gromov (summer.is.gone@gmail.com)<br/>      </p>
+      <p>Ivan Gromov (summer.is.gone@gmail.com)
+<br/>      </p>
     
 
     <h2>Download</h2>
     <p>
       You can download this project in either
       <a href="https://github.com/summerisgone/jstree/zipball/master">zip</a> or
-      <a href="https://github.com/summerisgone/jstree/tarball/master">tar formats.
+      <a href="https://github.com/summerisgone/jstree/tarball/master">tar formats.</a>
     </p>
+
+    <h2>Demo</h2>
+    <ul id="tree">
+        <li><input type="checkbox" value="1" id="item-1"/><label for="item-1">Alabama</label></li>
+        <li><input type="checkbox" value="2" id="item-2"/><label for="item-2">Alaska</label></li>
+        <li><input type="checkbox" value="3" id="item-3"/><label for="item-3">Arizona</label></li>
+        <li><input type="checkbox" value="4" id="item-4"/><label for="item-4">Arkansas</label></li>
+        <li><input type="checkbox" value="5" id="item-5"/><label for="item-5">California</label></li>
+        <li><input type="checkbox" value="6" id="item-6"/><label for="item-6">Colorado</label></li>
+        <li><input type="checkbox" value="7" id="item-7"/><label for="item-7">Connecticut</label>
+            <ul>
+                <li><input type="checkbox" value="8" id="item-8"/><label for="item-8">Delaware</label></li>
+                <li><input type="checkbox" value="9" id="item-9"/><label for="item-9">Florida</label></li>
+                <li><input type="checkbox" value="10" id="item-10"/><label for="item-10">Georgia</label></li>
+                <li><input type="checkbox" value="11" id="item-11"/><label for="item-11">Hawaii</label></li>
+                <li><input type="checkbox" value="12" id="item-12"/><label for="item-12">Idaho</label></li>
+                <li><input type="checkbox" value="13" id="item-13"/><label for="item-13">Illinois</label>
+                    <ul>
+                        <li><input type="checkbox" value="14" id="item-14"/><label for="item-14">Indiana</label></li>
+                        <li><input type="checkbox" value="15" id="item-15"/><label for="item-15">Iowa</label></li>
+                        <li><input type="checkbox" value="16" id="item-16"/><label for="item-16">Kansas</label>
+                            <ul>
+                                <li><input type="checkbox" value="17" id="item-17"/><label for="item-17">Kentucky</label></li>
+                                <li><input type="checkbox" value="18" id="item-18"/><label for="item-18">Louisiana</label></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><input type="checkbox" value="19" id="item-19"/><label for="item-19">Maine</label></li>
+                <li><input type="checkbox" value="20" id="item-20"/><label for="item-20">Maryland</label></li>
+
+            </ul>
+        </li>
+        <li><input type="checkbox" value="21" id="item-21"/><label for="item-21">Massachusetts</label></li>
+        <li><input type="checkbox" value="22" id="item-22"/><label for="item-22">Michigan</label></li>
+        <li><input type="checkbox" value="23" id="item-23"/><label for="item-23">Minnesota</label></li>
+        <li><input type="checkbox" value="24" id="item-24"/><label for="item-24">Mississippi</label>
+            <ul>
+                <li><input type="checkbox" value="25" id="item-25"/><label for="item-25">Missouri</label></li>
+                <li><input type="checkbox" value="26" id="item-26"/><label for="item-26">Montana</label>
+                    <ul>
+                        <li><input type="checkbox" value="28" id="item-28"/><label for="item-28">Nebraska</label></li>
+                        <li><input type="checkbox" value="27" id="item-27"/><label for="item-27">Nevada</label></li>
+                        <li><input type="checkbox" value="29" id="item-29"/><label for="item-29">New Hampshire</label></li>
+                    </ul>
+                </li>
+                <li><input type="checkbox" value="30" id="item-30"/><label for="item-30">New Jersey</label></li>
+            </ul>
+        </li>
+
+    </ul>
     <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
       by running:
       <pre>$ git clone git://github.com/summerisgone/jstree</pre>
